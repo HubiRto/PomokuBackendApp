@@ -1,22 +1,17 @@
 package pl.pomoku.pomokubackendapp.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@Entity
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "roles")
-public class Role {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+import static jakarta.persistence.GenerationType.IDENTITY;
 
-    @Column(nullable = false)
+@Data @Entity @AllArgsConstructor @NoArgsConstructor
+public class Role {
+    @Id @GeneratedValue(strategy = IDENTITY)
+    private Long id;
     private String name;
 }

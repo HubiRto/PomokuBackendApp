@@ -1,0 +1,2 @@
+POST http://localhost:8080/api/test
+Authorization: Bearer {eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTY4OTAxMjMwMiwiZXhwIjoxNjg5MDEzMjAyfQ.6Ml3tfSr1NhIHtlIMmskWE_2TGzqgiMwIQYiY_jNNLM}

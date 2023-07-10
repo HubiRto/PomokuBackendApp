@@ -2,7 +2,10 @@ package pl.pomoku.pomokubackendapp.service;
 
 import pl.pomoku.pomokubackendapp.entity.Role;
 
+import java.util.Optional;
+
+
 public interface RoleService {
-    Role findByName(String name);
-    Role addRole(Role role);
+    Optional<Role> getRoleByName(String name);
+    Role saveRole(Role role);
 }

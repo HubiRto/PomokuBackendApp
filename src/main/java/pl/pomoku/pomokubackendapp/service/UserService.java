@@ -2,7 +2,9 @@ package pl.pomoku.pomokubackendapp.service;
 
 import pl.pomoku.pomokubackendapp.entity.User;
 
+import java.util.Optional;
+
 public interface UserService {
-    User findByEmail(String email);
-    User addUser(User user);
+    Optional<User> getUserByEmail(String email);
+    User saveUser(User user);
 }
