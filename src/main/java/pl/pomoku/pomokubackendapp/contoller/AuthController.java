@@ -2,7 +2,10 @@ package pl.pomoku.pomokubackendapp.contoller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import pl.pomoku.pomokubackendapp.request.LoginRequest;
 import pl.pomoku.pomokubackendapp.request.RegisterRequest;
 import pl.pomoku.pomokubackendapp.service.AuthService;
@@ -12,14 +15,15 @@ import pl.pomoku.pomokubackendapp.service.AuthService;
 @RequiredArgsConstructor
 public class AuthController {
     private final AuthService authService;
+
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody RegisterRequest request){
+    public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
         authService.register(request);
         return ResponseEntity.ok().body("Stworzono konto");
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> register(@RequestBody LoginRequest request){
+    public ResponseEntity<?> register(@RequestBody LoginRequest request) {
         return ResponseEntity.ok(authService.login(request));
     }
 }
